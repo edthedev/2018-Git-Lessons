@@ -11,6 +11,7 @@ Introductory Git lessons
     - [Activity 2: Remember it Forever](#activity-2-remember-it-forever)
     - [Activity 3: Remember that time you remembered it forever.](#activity-3-remember-that-time-you-remembered-it-forever)
     - [Activity 4: Attacked by Pirates!](#activity-4-attacked-by-pirates)
+    - [Activity 5: What have I done?!](#activity-5-what-have-i-done)
   - [Misc Notes](#misc-notes)
   - [Lesson Plan](#lesson-plan)
   - [By Request](#by-request)
@@ -60,6 +61,11 @@ Set-Content -Path Notebook.txt -Value "Boarded by Pirates. Had to burn my notes.
 Get-Content -Path Notebook.txt
 ```
 
+### Activity 5: What have I done?!
+
+```powershell
+git diff Notebook.txt
+```
 
 ## Misc Notes
 
