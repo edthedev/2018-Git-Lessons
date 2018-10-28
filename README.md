@@ -1,9 +1,30 @@
 # 2018-Git-Lessons
 Introductory Git lessons
 
-# Git Lab
+## Table of Contents
+
+- [2018-Git-Lessons](#2018-git-lessons)
+  - [Table of Contents](#table-of-contents)
+  - [Lesson 1: Install Git and PowerShell](#lesson-1-install-git-and-powershell)
+  - [Lesson 2: Add a Penguin](#lesson-2-add-a-penguin)
+  - [Misc Notes](#misc-notes)
+  - [Lesson Plan](#lesson-plan)
+  - [By Request](#by-request)
+    - [Out of Scope](#out-of-scope)
+
+## Lesson 1: Install Git and PowerShell
+
+1. [Install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+2. [Install PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-powershell?view=powershell-6)
+
+## Lesson 2: Add a Penguin
 
 
+```
+
+```
+
+## Misc Notes
 
 ## Lesson Plan
 
