@@ -41,4 +41,12 @@ FAQ: I accidentally committed my password.
 
 FAQ: I accidentally committed and pushed my password.
 
+## By Request
+
+- How to stage only certain commits for a pull request.
+
+### Out of Scope
+
+- Difference values of branching and forking.
+
 
