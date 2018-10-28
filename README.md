@@ -6,7 +6,11 @@ Introductory Git lessons
 - [2018-Git-Lessons](#2018-git-lessons)
   - [Table of Contents](#table-of-contents)
   - [Lesson 1: Install Git and PowerShell](#lesson-1-install-git-and-powershell)
-  - [Lesson 2: Add a Penguin](#lesson-2-add-a-penguin)
+  - [Lesson 2: Arctic Safari](#lesson-2-arctic-safari)
+    - [Activity 1: Spot a Penguin](#activity-1-spot-a-penguin)
+    - [Activity 2: Remember it Forever](#activity-2-remember-it-forever)
+    - [Activity 3: Remember that time you remembered it forever.](#activity-3-remember-that-time-you-remembered-it-forever)
+    - [Activity 4: Attacked by Pirates!](#activity-4-attacked-by-pirates)
   - [Misc Notes](#misc-notes)
   - [Lesson Plan](#lesson-plan)
   - [By Request](#by-request)
@@ -17,17 +21,43 @@ Introductory Git lessons
 1. [Install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 2. [Install PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-powershell?view=powershell-6)
 3. [Install VSCode](https://code.visualstudio.com/docs/setup/setup-overview)
+4. [Install PowerShell support for VSCode]
 
-## Lesson 2: Add a Penguin
+## Lesson 2: Arctic Safari
 
+### Activity 1: Spot a Penguin
+
+Run the PowerShell commands below in your PowerShell prompt.
+If you are using VSCode, you can use the command ```Ctrl+Shift+P: PowerShell: Run Selection (F8)```
 
 Let's add one penguin to our notebook.
 ```powershell
-Add-Content -Path Notebook.txt -Value ("This is a sketch of the first penguin I ever spotted in the wild. I love this penguin.")
+Add-Content -Path Notebook.txt -Value ("This is a sketch of a penguin I saw.")
 Add-Content -Path Notebook.txt -Value (Get-Content -Path Files\Penguins\1.txt)
 ```
 
-Select the lines above and press F8 to run them in the powershell prompt below. 
+### Activity 2: Remember it Forever
+
+```powershell
+git stage Notebook.txt
+git commit Notebook.txt -m "First penguin. I will love him forever."
+```
+
+### Activity 3: Remember that time you remembered it forever.
+
+```powershell
+git log
+```
+
+You may need to press `q` a few times to exit the log.
+
+### Activity 4: Attacked by Pirates!
+
+
+```powershell
+Set-Content -Path Notebook.txt -Value "Boarded by Pirates. Had to burn my notes."
+```
+
 
 ## Misc Notes
 
