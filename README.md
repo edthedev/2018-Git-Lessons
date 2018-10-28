@@ -16,13 +16,18 @@ Introductory Git lessons
 
 1. [Install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 2. [Install PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-powershell?view=powershell-6)
+3. [Install VSCode](https://code.visualstudio.com/docs/setup/setup-overview)
 
 ## Lesson 2: Add a Penguin
 
 
+Let's add one penguin to our notebook.
+```powershell
+Add-Content -Path Notebook.txt -Value ("This is a sketch of the first penguin I ever spotted in the wild. I love this penguin.")
+Add-Content -Path Notebook.txt -Value (Get-Content -Path Files\Penguins\1.txt)
 ```
 
-```
+Select the lines above and press F8 to run them in the powershell prompt below. 
 
 ## Misc Notes
 
