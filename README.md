@@ -34,6 +34,7 @@ Let's add one penguin to our notebook.
 ```powershell
 Add-Content -Path Notebook.txt -Value ("This is a sketch of a penguin I saw.")
 Add-Content -Path Notebook.txt -Value (Get-Content -Path Files\Penguins\1.txt)
+Get-Content -Path Notebook.txt
 ```
 
 ### Activity 2: Remember it Forever
@@ -56,6 +57,7 @@ You may need to press `q` a few times to exit the log.
 
 ```powershell
 Set-Content -Path Notebook.txt -Value "Boarded by Pirates. Had to burn my notes."
+Get-Content -Path Notebook.txt
 ```
 
 
