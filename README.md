@@ -12,6 +12,7 @@ Introductory Git lessons
     - [Activity 3: Remember that time you remembered it forever.](#activity-3-remember-that-time-you-remembered-it-forever)
     - [Activity 4: Attacked by Pirates!](#activity-4-attacked-by-pirates)
     - [Activity 5: What have I done?!](#activity-5-what-have-i-done)
+  - [Upcoming Lessons](#upcoming-lessons)
   - [Misc Notes](#misc-notes)
   - [Lesson Plan](#lesson-plan)
   - [By Request](#by-request)
@@ -66,6 +67,27 @@ Get-Content -Path Notebook.txt
 ```powershell
 git diff Notebook.txt
 ```
+
+You should see something like:
+```
+-This is a sketch of the first penguin I ever spotted in the wild. I love this penguin.
+-(o_
+-(/)_
+-This is a sketch of a penguin I saw.
+-(o_
+-(/)_
++Boarded by Pirates. Had to burn my notes.^M
+```
+
+## Upcoming Lessons
+
+Reset to last commit.
+Commit our mistake.
+Revert our committed mistake.
+Reset to a tag.
+
+Take it in a whole new direction in a branch.
+Merge our branch.
 
 ## Misc Notes
 
