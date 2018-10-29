@@ -20,6 +20,26 @@ Introductory Git lessons
 
 ## Lesson 1: Install Git and PowerShell
 
+Silly plot outline
+  https://tfwiki.net/wiki/Flobsters_on_Parade
+  Inflate Helium Lobster Balloon
+  Doc Greene caught in snapped balloon cable.
+  Doc Greene rescues himself.
+  Blades captures the balloon.
+  Heatwave fakes an engine problem.
+  Floatium - more controllable helium.
+  Knocks floatium into lobster tank. - Flying Lobsters
+  Floatium takes two days to wear off.
+  Use cage to capture flying lobsters.
+  Dump cage back into water tank.
+  Flobster emergency reports come in:
+  Flobster severs a power cable.
+  Flobsters trap Frankie in a phone booth.
+  Compound can unfloat flobsters.
+  Use the giant balloon to chase the flobsters into one location.
+  Spray the flobsters.
+
+
 1. [Install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 2. [Install PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-powershell?view=powershell-6)
 3. [Install VSCode](https://code.visualstudio.com/docs/setup/setup-overview)
