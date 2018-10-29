@@ -10,9 +10,8 @@ Introductory Git lessons
     - [Activity 1: Instuctions to Inflate a Giant Lobster Balloon](#activity-1-instuctions-to-inflate-a-giant-lobster-balloon)
     - [Activity 2: Be Prepared.](#activity-2-be-prepared)
     - [Activity 3: Remember it Forever](#activity-3-remember-it-forever)
-    - [Activity 3: Remember that time you remembered it forever.](#activity-3-remember-that-time-you-remembered-it-forever)
-    - [Activity 4: Attacked by Pirates!](#activity-4-attacked-by-pirates)
-    - [Activity 5: What have I done?!](#activity-5-what-have-i-done)
+    - [Activity 4: Up, up and away!](#activity-4-up-up-and-away)
+    - [Activity 5: Rescued from the Lobster Balloon](#activity-5-rescued-from-the-lobster-balloon)
   - [Upcoming Lessons](#upcoming-lessons)
   - [Misc Notes](#misc-notes)
   - [Lesson Plan](#lesson-plan)
@@ -103,7 +102,7 @@ Changes to be committed:
 
         new file:   LobsterBalloon.txt
 #>
-git commit LobsterBallon.txt -m "Flawless instructions to inflat the balloon."
+git commit LobsterBalloon.txt -m "Flawless instructions to inflat the balloon."
 <#
 [master (root-commit) 9b73ae7] Flawless instructions to inflat the balloon.
  1 file changed, 3 insertions(+)
@@ -118,39 +117,108 @@ Date:   Mon Oct 29 17:35:10 2018 -0500
     Flawless instructions to inflat the balloon.
 #>
 ```
-
-### Activity 3: Remember that time you remembered it forever.
-
-```powershell
-git log
-```
-
 You may need to press `q` a few times to exit the log.
 
-### Activity 4: Attacked by Pirates!
+### Activity 4: Up, up and away!
 
 
 ```powershell
-Set-Content -Path Notebook.txt -Value "Boarded by Pirates. Had to burn my notes."
-Get-Content -Path Notebook.txt
+Add-Content -Path LobsterBalloon.txt -Value ("4. Watch as the balloon rises.")
+Add-Content -Path LobsterBalloon.txt -Value ("5. Get caught in the tow cable that was not tied to anything.")
+Add-Content -Path LobsterBalloon.txt -Value ("6. Panic.")
+Get-Content -Path LobsterBalloon.txt
+<#
+1. Unfurl the giant lobster balloon.
+2. Connect the helium tank.
+3. Inflate with helium.
+4. Watch as the balloon rises.
+5. Get caught in the tow cable that was not tied to anything.
+6. Panic.
+#>
 ```
-
-### Activity 5: What have I done?!
 
 ```powershell
-git diff Notebook.txt
+git commit -a -m "Corrected instructions to match actual outcome."
+<#
+[master 2a4b1e2] Corrected instructions to match actual outcome.
+ 1 file changed, 4 insertions(+)
+#>
+git log --pretty="%h %ad %an %s"
+<#
+2a4b1e2 Mon Oct 29 17:42:53 2018 -0500 Edward Delaporte Corrected instructions to match actual outcome.
+9b73ae7 Mon Oct 29 17:35:10 2018 -0500 Edward Delaporte Flawless instructions to inflat the balloon.
+#>
 ```
 
-You should see something like:
+### Activity 5: Rescued from the Lobster Balloon
+
+Let's not just document the problem, let's fix it.
+First, let's undo our last change.
+
+```powershell
+git revert 2a4b1e2
+<#
+[master dfc93f9] Revert "Corrected instructions to match actual outcome."
+ 1 file changed, 4 deletions(-)
+#>
 ```
--This is a sketch of the first penguin I ever spotted in the wild. I love this penguin.
--(o_
--(/)_
--This is a sketch of a penguin I saw.
--(o_
--(/)_
-+Boarded by Pirates. Had to burn my notes.^M
+
+Notice that we still have a record of our change, and the reversal.
+
+```powershell
+git log --pretty="%h %ad %an %s"
+<#
+dfc93f9 Mon Oct 29 17:46:58 2018 -0500 Edward Delaporte Revert "Corrected instructions to match actual outcome."
+2a4b1e2 Mon Oct 29 17:42:53 2018 -0500 Edward Delaporte Corrected instructions to match actual outcome.
+9b73ae7 Mon Oct 29 17:35:10 2018 -0500 Edward Delaporte Flawless instructions to inflat the balloon.
+#>
+ ```
+
+Since our instructions are dangerous, let's just get rid of them.
+
+```powershell
+Set-Content -Path LobsterBalloon.txt -Value ("1. Do not touch the balloon or the helium.")
+git diff
+<#
+diff --git a/LobsterBalloon.txt b/LobsterBalloon.txt
+index 89e2ce9..a7fff40 100644
+--- a/LobsterBalloon.txt
++++ b/LobsterBalloon.txt
+@@ -1,3 +1 @@
+-1. Unfurl the giant lobster baloon.
+-2. Connect the helium tank.
+-3. Inflate with helium.
++1. Do not touch the balloon or the helium.^M
+#>
 ```
+
+Let's not do that, after all.
+
+```powershell
+PS C:\RescueBots> git reset HEAD --hard
+HEAD is now at dfc93f9 Revert "Corrected instructions to match actual outcome."
+PS C:\RescueBots> Get-Content .\LobsterBalloon.txt
+1. Unfurl the giant lobster baloon.
+2. Connect the helium tank.
+3. Inflate with helium.
+```
+
+```powershell
+Set-Content -Path LobsterBalloon.txt -Value ("1. Unfurl the giant lobster balloon.")
+Add-Content -Path LobsterBalloon.txt -Value ("2. Connect the FLOATIUM tank.")
+Add-Content -Path LobsterBalloon.txt -Value ("3. Inflate with helium.")
+Get-Content .\LobsterBalloon.txt
+  1. Unfurl the giant lobster balloon.
+  2. Connect the FLOATIUM tank.
+  3. Inflate with helium.
+git diff
+  -1. Unfurl the giant lobster baloon.
+  -2. Connect the helium tank.
+  +1. Unfurl the giant lobster balloon.^M
+  +2. Connect the FLOATIUM tank.^M
+  3. Inflate with helium.
+```
+
 
 ## Upcoming Lessons
 
