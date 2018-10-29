@@ -5,10 +5,11 @@ Introductory Git lessons
 
 - [2018-Git-Lessons](#2018-git-lessons)
   - [Table of Contents](#table-of-contents)
-  - [Lesson 1: Install Git and PowerShell](#lesson-1-install-git-and-powershell)
-  - [Lesson 2: Arctic Safari](#lesson-2-arctic-safari)
-    - [Activity 1: Spot a Penguin](#activity-1-spot-a-penguin)
-    - [Activity 2: Remember it Forever](#activity-2-remember-it-forever)
+  - [Lesson 0: Install Git and PowerShell](#lesson-0-install-git-and-powershell)
+    - [Lesson 1: Start Tracking](#lesson-1-start-tracking)
+    - [Activity 1: Instuctions to Inflate a Giant Lobster Balloon](#activity-1-instuctions-to-inflate-a-giant-lobster-balloon)
+    - [Activity 2: Be Prepared.](#activity-2-be-prepared)
+    - [Activity 3: Remember it Forever](#activity-3-remember-it-forever)
     - [Activity 3: Remember that time you remembered it forever.](#activity-3-remember-that-time-you-remembered-it-forever)
     - [Activity 4: Attacked by Pirates!](#activity-4-attacked-by-pirates)
     - [Activity 5: What have I done?!](#activity-5-what-have-i-done)
@@ -18,7 +19,7 @@ Introductory Git lessons
   - [By Request](#by-request)
     - [Out of Scope](#out-of-scope)
 
-## Lesson 1: Install Git and PowerShell
+## Lesson 0: Install Git and PowerShell
 
 Silly plot outline
   https://tfwiki.net/wiki/Flobsters_on_Parade
@@ -45,25 +46,77 @@ Silly plot outline
 3. [Install VSCode](https://code.visualstudio.com/docs/setup/setup-overview)
 4. [Install PowerShell support for VSCode]
 
-## Lesson 2: Arctic Safari
 
-### Activity 1: Spot a Penguin
+### Lesson 1: Start Tracking
+
+### Activity 1: Instuctions to Inflate a Giant Lobster Balloon
 
 Run the PowerShell commands below in your PowerShell prompt.
 If you are using VSCode, you can use the command ```Ctrl+Shift+P: PowerShell: Run Selection (F8)```
 
 Let's add one penguin to our notebook.
 ```powershell
-Add-Content -Path Notebook.txt -Value ("This is a sketch of a penguin I saw.")
-Add-Content -Path Notebook.txt -Value (Get-Content -Path Files\Penguins\1.txt)
-Get-Content -Path Notebook.txt
+$projectRoot = "$env:SystemDrive\RescueBots" # C:\RescueBots - Feel free to adjust this location if you need to.
+New-Item -ItemType directory $projectRoot
+cd $projectRoot
+Add-Content -Path LobsterBalloon.txt -Value ("1. Unfurl the giant lobster baloon.")
+Add-Content -Path LobsterBalloon.txt -Value ("2. Connect the helium tank.")
+Add-Content -Path LobsterBalloon.txt -Value ("3. Inflate with helium.")
+Get-Content -Path LobsterBalloon.txt
+<#
+1. Unfurl the giant lobster baloon.
+2. Connect the helium tank.
+3. Inflate with helium.
+#>
 ```
 
-### Activity 2: Remember it Forever
+### Activity 2: Be Prepared.
 
 ```powershell
-git stage Notebook.txt
-git commit Notebook.txt -m "First penguin. I will love him forever."
+git init
+<#
+Initialized empty Git repository in C:/RescueBots/.git/
+#>
+git status
+<#
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        LobsterBalloon.txt
+#>
+```
+
+### Activity 3: Remember it Forever
+
+```powershell
+git stage LobsterBalloon.txt
+git status
+<#
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   LobsterBalloon.txt
+#>
+git commit LobsterBallon.txt -m "Flawless instructions to inflat the balloon."
+<#
+[master (root-commit) 9b73ae7] Flawless instructions to inflat the balloon.
+ 1 file changed, 3 insertions(+)
+ create mode 100644 LobsterBalloon.txt
+#>
+git log
+<#
+commit 9b73ae76c3fec154e08d957a581b234e9d47a29d (HEAD -> master)
+Author: Edward Delaporte <edward.delaporte@busey.com>
+Date:   Mon Oct 29 17:35:10 2018 -0500
+
+    Flawless instructions to inflat the balloon.
+#>
 ```
 
 ### Activity 3: Remember that time you remembered it forever.
