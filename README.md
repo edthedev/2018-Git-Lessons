@@ -7,39 +7,47 @@ Get-History | Add-Content -Path "log.txt"
 
 - [2018-Git-Lessons](#2018-git-lessons)
   - [Table of Contents](#table-of-contents)
-  - [Lesson Plan](#lesson-plan)
+  - [Upcoming Lesssons](#upcoming-lesssons)
   - [Lesson 0: Install Git and PowerShell](#lesson-0-install-git-and-powershell)
-  - [Lesson 1: Instructions to Inflat a Giant Lobster Balloon](#lesson-1-instructions-to-inflat-a-giant-lobster-balloon)
+  - [Lesson 1: Instructions to Inflate a Giant Lobster Balloon](#lesson-1-instructions-to-inflate-a-giant-lobster-balloon)
     - [Activity 1: git init, git status](#activity-1-git-init-git-status)
     - [Activity 2: git stage, git commit, git log](#activity-2-git-stage-git-commit-git-log)
     - [Activity 4: git commit -a -m, git log --pretty -or- Up, up and away!](#activity-4-git-commit--a--m-git-log---pretty--or--up-up-and-away)
     - [Activity 5: git revert, git reset -or- Rescued!](#activity-5-git-revert-git-reset--or--rescued)
-  - [Upcoming Lessons](#upcoming-lessons)
-  - [Misc Notes](#misc-notes)
-    - [Raw Session](#raw-session)
+  - [Lesson 2: Things Left Re-Undone](#lesson-2-things-left-re-undone)
+    - [git remote -or- "Everything is on fire."](#git-remote--or--%22everything-is-on-fire%22)
+    - [.gitignore -or- "Why do we even have that lever?"](#gitignore--or--%22why-do-we-even-have-that-lever%22)
 
-## Lesson Plan
+## Upcoming Lesssons
 
-Bare minimums
-  - Installing Git, VSCode and PowerShell 6
-  - Git init
-  - Commit all
-  - Revert all
-
+TODO: Break into logical lessons.
 
 Offsite backup
-  - make a remote
-  - Add a remote
   - delete all local files
   - restore from remote
-  - Change remotes?
-  - use two remotes?
+  - Change to a new remote.
 
-Tragedy Undone 1: Restore from remote
-TU2: Revert an old mistake
-TU: go back in time and try something v different - checkout from history, make a branch
+Stash / Stash apply
+
+Tags
+- Add a tag
+- Push a tag
+- Fetches tags
+- Checkout a tag
+- Reset to a tag
+
+Branches
+- Take it in a whole new direction in a branch.
+- Diff our branch for code review
+- Merge our branch.
+- Rebase
+
+Cherry Picking
+- Revert an old commit.
+- Cherry-pick a commit from another branch.
+- Make a branch based on an old tag. (Let's try something different)
+
 TU: keep the best of both timelines - checkout first branch, revert a mistake, switch back, rebase, merge
-
 
 Taking a breather \ changing course
   - git stash
@@ -49,7 +57,6 @@ Collaborating
   - fetch, pull and rebase
   - code review
 
-  
 FAQ: I accidentally committed my password.
 
 FAQ: I accidentally committed and pushed my password.
@@ -91,7 +98,7 @@ Silly plot outline
 Visit the slack channel to share error messages and code snippets during class.
 https://rescuebots.slack.com
 
-## Lesson 1: Instructions to Inflat a Giant Lobster Balloon
+## Lesson 1: Instructions to Inflate a Giant Lobster Balloon
 
 ### Activity 1: git init, git status
 
@@ -255,138 +262,14 @@ git diff
   +1. Unfurl the giant lobster balloon.^M
   +2. Connect the FLOATIUM tank.^M
   3. Inflate with helium.
+git commit .\LobsterBalloon.txt -m "Solved all my problems - WITH FLOATIUM!"
 ```
 
+## Lesson 2: Things Left Re-Undone
 
-## Upcoming Lessons
-
-Reset to last commit.
-Commit our mistake.
-Revert our committed mistake.
-Reset to a tag.
-
-Take it in a whole new direction in a branch.
-Merge our branch.
-
-## Misc Notes
-
-
-### Raw Session
+### git remote  -or- "Everything is on fire."
 
 ```powershell
-cd c:\vso
-mkdir temp
-Add-Content -Path LobsterBalloon.txt -Value ("1. Unfurl the giant lobster baloon.")
-Add-Content -Path LobsterBalloon.txt -Value ("2. Connect the helium tank.")
-Add-Content -Path LobsterBalloon.txt -Value ("3. Inflate with helium.")
-Get-Content -Path LobsterBalloon.txt
-git init
-git status
-rm -rf .git
-rm .git
-ls
-clear
-ls
-mkdir Test
-cd Test
-ls
-Get-Content -Path LobsterBalloon.txt
-Add-Content -Path LobsterBalloon.txt -Value ("3. Inflate with helium.")
-Add-Content -Path LobsterBalloon.txt -Value ("2. Connect the helium tank.")
-Add-Content -Path LobsterBalloon.txt -Value ("1. Unfurl the giant lobster baloon.")
-clear
-Add-Content -Path LobsterBalloon.txt -Value ("1. Unfurl the giant lobster baloon.")
-Add-Content -Path LobsterBalloon.txt -Value ("2. Connect the helium tank.")
-Add-Content -Path LobsterBalloon.txt -Value ("3. Inflate with helium.")
-Get-Content -Path LobsterBalloon.txt
-git init
-cd ..
-mkdir RescueBots
-cd .\RescueBots\
-ls
-cd ..
-cd ..
-mkdir RescueBots
-cd .\RescueBots\
-$projectRoot = $env:SystemDrive\RescueBots # C:\RescueBots - Feel free to adjust this location if you need to.
-New-Item -ItemType directory $projectRoot
-cd $projectRoot
-Add-Content -Path LobsterBalloon.txt -Value ("1. Unfurl the giant lobster baloon.")
-Add-Content -Path LobsterBalloon.txt -Value ("2. Connect the helium tank.")
-Add-Content -Path LobsterBalloon.txt -Value ("3. Inflate with helium.")
-Get-Content -Path LobsterBalloon.txt
-$projectRoot = "$env:SystemDrive\RescueBots" # C:\RescueBots - Feel free to adjust this location if you need to.
-New-Item -ItemType directory $projectRoot
-cd $projectRoot
-clear
-ls
-rm .\LobsterBalloon.txt
-Add-Content -Path LobsterBalloon.txt -Value ("1. Unfurl the giant lobster baloon.")
-Add-Content -Path LobsterBalloon.txt -Value ("2. Connect the helium tank.")
-Add-Content -Path LobsterBalloon.txt -Value ("3. Inflate with helium.")
-Get-Content -Path LobsterBalloon.txt
-git init
-git stage LobsterBalloon.txt
-git status
-git -rm --cached .\LobsterBalloon.txt
-git status
-cd ..
-cd .\VSO\Test\
-ls
-git status
-cd ..
-cd ..
-cd .\RescueBots\
-clear
-ls
-On branch master
-No commits yet
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-clear
-ls
-git status
-On branch master
-No commits yet
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-git commit LobsterBallon.txt -m "Flawless instructions to inflat the balloon."
-git commit LobsterBalloon.txt -m "Flawless instructions to inflat the balloon."
-git log
-Get-Content -Path LobsterBalloon.txt
-Add-Content -Path LobsterBalloon.txt -Value ("5. Panic.")
-Add-Content -Path LobsterBalloon.txt -Value ("4. Get caught in the tow cable that was not tied to anything.")
-Add-Content -Path LobsterBalloon.txt -Value ("4. Get caught in the tow cable that was not tied to anything.")
-Add-Content -Path LobsterBalloon.txt -Value ("5. Panic.")
-Get-Content -Path LobsterBalloon.txt
-
-code .\LobsterBalloon.txt
-Set-Content -Path LobsterBalloon.txt -Value ("1. Do not touch the balloon or the helium.")
-git diff
-git reset --HARD
-git reset --HARD HEAD
-git reset HEAD
-git reset HEAD --hard
-Get-Content .\LobsterBalloon.txt
-Set-Content -Path LobsterBalloon.txt -Value ("1. Unfurl the giant lobster balloon.")
-Add-Content -Path LobsterBalloon.txt -Value ("2. Connect the FLOATIUM tank.")
-Add-Content -Path LobsterBalloon.txt -Value ("3. Inflate with helium.")
-Get-Content .\LobsterBalloon.txt
-git diff
-Get-History | Out-File -Path log.txt
-cat log.txt
-Get-Content log.txt
-ls
-Get-History
-Get-History | Add-Content -Path "log.txt"
-ls
-cat log.txt
-clear
-ls
-ls
-Get-Content .\LobsterBalloon.txt
-git status
-git commit .\LobsterBalloon.txt -m "Solved all my problems - WITH FLOATIUM!"
 cd ..
 mkdir C:\Firehouse
 cd .\Firehouse\
@@ -396,13 +279,14 @@ cd ..
 cd .\RescueBots\
 ls
 git remote add origin C:\Firehouse
-git remote
 git remote --list
-git remote set-url
-git push
 git push --set-upstream origin master
-Get-History | Set-Content -Path "fulllog.txt"
 git status
+```
+
+### .gitignore -or- "Why do we even have that lever?"
+
+```powershell
 Set-Content -Path LobsterTank.txt -Value "Just some live lobsters near our Floatium tank."
 Get-Content -Path .\LobsterTank.txt
 git status
