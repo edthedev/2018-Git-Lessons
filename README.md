@@ -8,6 +8,8 @@ Get-History | Add-Content -Path "log.txt"
 - [2018-Git-Lessons](#2018-git-lessons)
   - [Table of Contents](#table-of-contents)
   - [Upcoming Lesssons](#upcoming-lesssons)
+  - [TODO:](#todo)
+  - [Overview](#overview)
   - [Lesson 0: Install Git and PowerShell](#lesson-0-install-git-and-powershell)
   - [Lesson 1: Instructions to Inflate a Giant Lobster Balloon](#lesson-1-instructions-to-inflate-a-giant-lobster-balloon)
     - [Activity 1: git init, git status](#activity-1-git-init-git-status)
@@ -19,6 +21,9 @@ Get-History | Add-Content -Path "log.txt"
     - [.gitignore -or- "Why do we even have that lever?"](#gitignore--or--%22why-do-we-even-have-that-lever%22)
 
 ## Upcoming Lesssons
+
+This covers some of the advanced bits...
+https://learngitbranching.js.org/
 
 TODO: Break into logical lessons.
 
@@ -68,6 +73,26 @@ By Request
 Out of Scope?
 
 - Difference values of branching and forking.
+
+## TODO:
+
+- [ ] Publish a Slide deck with talking points.
+- [ ] Do all the online Git lessons, timing yourself. (Get J to do them, time her on an advanced one...?)
+
+## Overview
+
+- Hands on with Git, PowerShell and VSCode
+- Exercises: Web Lessons in Advanced Git
+- Exercise: GitHub Fork and Pull Request
+- Questions and Answers
+- Bonus: Whirlwind Tour of Git Tools
+
+??? 
+
+Git Tools to demo:
+  VSCode
+  Atlassian SourceTree
+  Git PSPrompt?
 
 ## Lesson 0: Install Git and PowerShell
 
