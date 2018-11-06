@@ -19,6 +19,7 @@ Get-History | Add-Content -Path "log.txt"
   - [Lesson 2: Things Left Re-Undone](#lesson-2-things-left-re-undone)
     - [git remote -or- "Everything is on fire."](#git-remote--or--%22everything-is-on-fire%22)
     - [.gitignore -or- "Why do we even have that lever?"](#gitignore--or--%22why-do-we-even-have-that-lever%22)
+    - [Migrating to a new Origin](#migrating-to-a-new-origin)
 
 ## Upcoming Lesssons
 
@@ -335,4 +336,28 @@ git reset 11546df7aea764d769744322fc537066497811dc
 git status
 git commit .\LobsterTank.txt -m "I changed my mind. These lobster are fascinating!"
 git status
+```
+
+
+### Migrating to a new Origin
+
+```
+PS C:\vso> cd .\OpsVBAScripts\
+PS C:\vso\OpsVBAScripts> git remote add origin https://buseydev.visualstudio.com/Busey.Operations/_git/OpsVBScripts
+fatal: remote origin already exists.
+PS C:\vso\OpsVBAScripts> git push -u origin --all^C
+PS C:\vso\OpsVBAScripts> git remote remove origin
+PS C:\vso\OpsVBAScripts> git remote add origin https://buseydev.visualstudio.com/Busey.Operations/_git/OpsVBScripts
+PS C:\vso\OpsVBAScripts> git push -u origin --all
+Counting objects: 33, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (30/30), done.
+Writing objects: 100% (33/33), 15.38 KiB | 1.92 MiB/s, done.
+Total 33 (delta 7), reused 0 (delta 0)
+remote: Analyzing objects... (33/33) (14 ms)
+remote: Storing packfile... done (94 ms)
+remote: Storing index... done (46 ms)
+To https://buseydev.visualstudio.com/Busey.Operations/_git/OpsVBScripts
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin' by rebasing.
 ```
