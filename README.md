@@ -7,8 +7,6 @@ Get-History | Add-Content -Path "log.txt"
 
 - [2018-Git-Lessons](#2018-git-lessons)
   - [Table of Contents](#table-of-contents)
-  - [Upcoming Lesssons](#upcoming-lesssons)
-  - [TODO:](#todo)
   - [Overview](#overview)
   - [Lesson 0: Install Git and PowerShell](#lesson-0-install-git-and-powershell)
   - [Lesson 1: Instructions to Inflate a Giant Lobster Balloon](#lesson-1-instructions-to-inflate-a-giant-lobster-balloon)
@@ -19,66 +17,9 @@ Get-History | Add-Content -Path "log.txt"
   - [Lesson 2: Things Left Re-Undone](#lesson-2-things-left-re-undone)
     - [git remote -or- "Everything is on fire."](#git-remote--or--%22everything-is-on-fire%22)
     - [.gitignore -or- "Why do we even have that lever?"](#gitignore--or--%22why-do-we-even-have-that-lever%22)
-    - [Migrating to a new Origin](#migrating-to-a-new-origin)
+  - [Further Learning](#further-learning)
+    - [Bonus: Migrating to a new Origin](#bonus-migrating-to-a-new-origin)
 
-## Upcoming Lesssons
-
-This covers some of the advanced bits...
-https://learngitbranching.js.org/
-
-TODO: Break into logical lessons.
-
-Offsite backup
-  - delete all local files
-  - restore from remote
-  - Change to a new remote.
-
-Stash / Stash apply
-
-Tags
-- Add a tag
-- Push a tag
-- Fetches tags
-- Checkout a tag
-- Reset to a tag
-
-Branches
-- Take it in a whole new direction in a branch.
-- Diff our branch for code review
-- Merge our branch.
-- Rebase
-
-Cherry Picking
-- Revert an old commit.
-- Cherry-pick a commit from another branch.
-- Make a branch based on an old tag. (Let's try something different)
-
-TU: keep the best of both timelines - checkout first branch, revert a mistake, switch back, rebase, merge
-
-Taking a breather \ changing course
-  - git stash
-  - git branch
-
-Collaborating
-  - fetch, pull and rebase
-  - code review
-
-FAQ: I accidentally committed my password.
-
-FAQ: I accidentally committed and pushed my password.
-
-By Request
-
-- How to stage only certain commits for a pull request.
-
-Out of Scope?
-
-- Difference values of branching and forking.
-
-## TODO:
-
-- [ ] Publish a Slide deck with talking points.
-- [ ] Do all the online Git lessons, timing yourself. (Get J to do them, time her on an advanced one...?)
 
 ## Overview
 
@@ -338,17 +279,20 @@ git commit .\LobsterTank.txt -m "I changed my mind. These lobster are fascinatin
 git status
 ```
 
+## Further Learning
 
-### Migrating to a new Origin
+Now try - https://learngitbranching.js.org/
+
+### Bonus: Migrating to a new Origin
 
 ```
 PS C:\vso> cd .\OpsVBAScripts\
 PS C:\vso\OpsVBAScripts> git remote add origin https://buseydev.visualstudio.com/Busey.Operations/_git/OpsVBScripts
 fatal: remote origin already exists.
-PS C:\vso\OpsVBAScripts> git push -u origin --all^C
 PS C:\vso\OpsVBAScripts> git remote remove origin
 PS C:\vso\OpsVBAScripts> git remote add origin https://buseydev.visualstudio.com/Busey.Operations/_git/OpsVBScripts
 PS C:\vso\OpsVBAScripts> git push -u origin --all
+
 Counting objects: 33, done.
 Delta compression using up to 8 threads.
 Compressing objects: 100% (30/30), done.
@@ -360,4 +304,5 @@ remote: Storing index... done (46 ms)
 To https://buseydev.visualstudio.com/Busey.Operations/_git/OpsVBScripts
  * [new branch]      master -> master
 Branch 'master' set up to track remote branch 'master' from 'origin' by rebasing.
+
 ```
