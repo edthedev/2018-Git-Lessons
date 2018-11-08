@@ -1,6 +1,8 @@
 # 2018-Git-Lessons
 Introductory Git lessons
 
+# https://github.com/edthedev/2018-git-lessons
+
 Get-History | Add-Content -Path "log.txt"
 
 ## Table of Contents
