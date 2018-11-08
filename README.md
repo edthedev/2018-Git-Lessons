@@ -20,64 +20,6 @@ Get-History | Add-Content -Path "log.txt"
     - [git remote -or- "Everything is on fire."](#git-remote--or--%22everything-is-on-fire%22)
     - [.gitignore -or- "Why do we even have that lever?"](#gitignore--or--%22why-do-we-even-have-that-lever%22)
 
-## Upcoming Lesssons
-
-This covers some of the advanced bits...
-https://learngitbranching.js.org/
-
-TODO: Break into logical lessons.
-
-Offsite backup
-  - delete all local files
-  - restore from remote
-  - Change to a new remote.
-
-Stash / Stash apply
-
-Tags
-- Add a tag
-- Push a tag
-- Fetches tags
-- Checkout a tag
-- Reset to a tag
-
-Branches
-- Take it in a whole new direction in a branch.
-- Diff our branch for code review
-- Merge our branch.
-- Rebase
-
-Cherry Picking
-- Revert an old commit.
-- Cherry-pick a commit from another branch.
-- Make a branch based on an old tag. (Let's try something different)
-
-TU: keep the best of both timelines - checkout first branch, revert a mistake, switch back, rebase, merge
-
-Taking a breather \ changing course
-  - git stash
-  - git branch
-
-Collaborating
-  - fetch, pull and rebase
-  - code review
-
-FAQ: I accidentally committed my password.
-
-FAQ: I accidentally committed and pushed my password.
-
-By Request
-
-- How to stage only certain commits for a pull request.
-
-Out of Scope?
-
-- Difference values of branching and forking.
-
-## TODO:
-
-- [ ] Publish a Slide deck with talking points.
-- [ ] Do all the online Git lessons, timing yourself. (Get J to do them, time her on an advanced one...?)
 
 ## Overview
 
@@ -336,3 +278,7 @@ git status
 git commit .\LobsterTank.txt -m "I changed my mind. These lobster are fascinating!"
 git status
 ```
+
+## Further Learning
+
+Now try - https://learngitbranching.js.org/
